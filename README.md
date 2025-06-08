@@ -14,14 +14,14 @@
 
 
 
-# DevOpsCloud:
+** # DevOpsCloud: **
 DevOps is a set of practices, cultural philosophies, and tools that help organizations deliver applications and services faster, more efficiently, and with better quality.
 
 🔧 Definition
-DevOps = Development + Operations
-
+** DevOps = Development + Operations **
+```
 It bridges the gap between software development (Dev) and IT operations (Ops) by fostering collaboration, automation, and continuous delivery.
-
+```
 🎯 Goals of DevOps
 Faster delivery of software
 
