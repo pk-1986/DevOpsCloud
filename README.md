@@ -1,4 +1,4 @@
-# DevOpsCloud
+# DevOpsCloud:
 DevOps is a set of practices, cultural philosophies, and tools that help organizations deliver applications and services faster, more efficiently, and with better quality.
 
 🔧 Definition
