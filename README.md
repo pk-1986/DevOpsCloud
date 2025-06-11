@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Pranab</h1>
-<h3 align="center">A passionate DevOps & OPS from India</h3>
+<h3 align="center">I am a passionate DevOps and Ops engineer from India with hands-on experience in a wide range of tools and practices, including CI/CD pipelines, cloud infrastructure, container orchestration, monitoring, and automation.</h3>
 
 - 🔭 I’m currently working on **Automotive Domian**
 
