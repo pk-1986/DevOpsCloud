@@ -1,121 +1,165 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <title>Jay Mahakala Registration Form</title>    
- </head>
+<head>
+  <title>Jay Mahakala Registration Form</title>
+  <script>
+    const data = {
+      "Runu Sahoo": { dob: "10-01-1978", age: 43, gender: "Male" },
+      "Jhunu Sahoo": { dob: "10-01-1980", age: 41, gender: "Female" },
+	  "Mina Sahoo": { dob: "10-01-1982", age: 40, gender: "Female" },
+	  "Bulu Sahoo": { dob: "05-11-1986", age: 27, gender: "Male" },
+	  "Tulu Sahoo": { dob: "04-08-1988", age: 27, gender: "Male" },
+	  "Sinu Sahoo": { dob: "06-061992", age: 27, gender: "Female" },
+      "Lina Sahoo": { dob: "06-07-1994", age: 23, gender: "Female" }
+    };
 
- <body bgcolor="MistyRose">
- 
- <form>
-  <table align="center" width="700" cellpadding="10">
-  
-  <tr>
-   <td colspan="2" align="center">
-     <h1>Jay Mahakala Registration Form</h1>
-   </td>
-  </tr>
+    function populateDetails() {
+      const selectedName = document.getElementById("nameDropdown").value;
+      if (data[selectedName]) {
+        const dobParts = data[selectedName].dob.split("-");
+        document.getElementById("dob_day").value = dobParts[0];
+        document.getElementById("dob_month").value = dobParts[1];
+        document.getElementById("dob_year").value = dobParts[2];
+        document.getElementById("ageField").value = data[selectedName].age;
+        document.getElementById("gender_" + data[selectedName].gender.toLowerCase()).checked = true;
 
-  <tr>
-    <td>Roll no. :</td>
-    <td><input type="text" size="50"/></td>
-  </tr>
+        // Also split name into first and last (optional enhancement)
+        const nameParts = selectedName.split(" ");
+        document.getElementById("fname").value = nameParts[0];
+        document.getElementById("lname").value = nameParts.slice(1).join(" ");
+      }
+    }
+  </script>
+</head>
 
-  <tr>
-    <td>Jay Mahakala name :</td>
-    <td>
-      <input type="text" size="21" Placeholder="First Name"/>
-      -
-      <input type="text" size="21" Placeholder="Last Name"/>
-    </td>
-  </tr>
-  
-  <tr>
-    <td>Father's name :</td>
-    <td><input type="text" size="50"/></td>
-  </tr>
-  
-  <tr>
-    <td>Date of birth :</td>
-    <td>
-      <input type="text" size="3" Placeholder="Day" /> - 
-      <input type="text" size="3" Placeholder="Month" /> -
-      <input type="text" size="8" Placeholder="Year" /> 
-      <i>(DD-MM-YYYY)</i>
-    </td>
-  </tr>
-  
-  <tr>
-    <td>Mobile no. :</td>
-    <td>
-      <input type="text" size="1" value="+91" /> -
-      <input type="text" size="42" /></td>
-  </tr>
-  <tr>
-    <td>Email id :</td>
-    <td><input type="text" size="50"/></td>
-  </tr>
-  
-  <tr>
-    <td>Password :</td>
-    <td><input type="password" size="50"/></td>
-  </tr>
-  
-  <tr>
-    <td>Gender :</td>
-    <td>
-      <input type="radio" name="g" /> Male
-      <input type="radio" name="g" /> Female
-    </td>
-  </tr>
-  
-  <tr>
-    <td>Department :</td>
-    <td>
-      <input type="checkbox" /> CSE
-      <input type="checkbox" /> IT
-      <input type="checkbox" /> ECE
-      <input type="checkbox" /> Civil
-      <input type="checkbox" /> Mech
-      </td>
-  </tr>
-  
-  <tr>
-    <td>Course :</td>
-    <td><select>
-        <option> ---------------------- Select Current Course's ------------------------ </option>
-        <option>Python</option>
-        <option>Node</option>
-        <option>Java</option>
-        <option>React</option>
-        <option>PHP</option>
-      </select>
-    </td>
-  </tr>
-  
-   <tr>
-    <td>Sahoo Family photo :</td>
-    <td><input type="file" /></td>
-  </tr>
-  
-  <tr>
-    <td>City :</td>
-    <td><input type="text"  size="50"/></td>
-  </tr>
-  
-  <tr>
-    <td>Address :</td>
-    <td><textarea cols="48" rows="5"></textarea></td>
-  </tr>
-  
-  
-  <tr>
-    <td colspan="2" align="center">
-    	<input type="submit" value="Register" />
-     </td>
-  </tr>
-  
-  </table>
- </form>
- 
+<body bgcolor="MistyRose">
+  <form>
+    <table align="center" width="700" cellpadding="10">
+      <tr>
+        <td colspan="2" align="center">
+          <h1>Jay Mahakala Registration Form</h1>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Select Name :</td>
+        <td>
+          <select id="nameDropdown" onchange="populateDetails()">
+            <option value="">-- Select Name --</option>
+            <option value="Ram Kumar">Ram Kumar</option>
+            <option value="Sita Devi">Sita Devi</option>
+            <option value="Krishna Rao">Krishna Rao</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Roll no. :</td>
+        <td><input type="text" size="50" /></td>
+      </tr>
+
+      <tr>
+        <td>Jay Mahakala name :</td>
+        <td>
+          <input type="text" size="21" Placeholder="First Name" id="fname" />
+          -
+          <input type="text" size="21" Placeholder="Last Name" id="lname" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Father's name :</td>
+        <td><input type="text" size="50" /></td>
+      </tr>
+
+      <tr>
+        <td>Date of birth :</td>
+        <td>
+          <input type="text" size="3" Placeholder="Day" id="dob_day" /> -
+          <input type="text" size="3" Placeholder="Month" id="dob_month" /> -
+          <input type="text" size="8" Placeholder="Year" id="dob_year" />
+          <i>(DD-MM-YYYY)</i>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Age :</td>
+        <td><input type="text" size="5" id="ageField" /></td>
+      </tr>
+
+      <tr>
+        <td>Mobile no. :</td>
+        <td>
+          <input type="text" size="1" value="+91" /> -
+          <input type="text" size="42" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Email id :</td>
+        <td><input type="text" size="50" /></td>
+      </tr>
+
+      <tr>
+        <td>Password :</td>
+        <td><input type="password" size="50" /></td>
+      </tr>
+
+      <tr>
+        <td>Gender :</td>
+        <td>
+          <input type="radio" name="g" id="gender_male" /> Male
+          <input type="radio" name="g" id="gender_female" /> Female
+        </td>
+      </tr>
+
+      <tr>
+        <td>Department :</td>
+        <td>
+          <input type="checkbox" /> CSE
+          <input type="checkbox" /> IT
+          <input type="checkbox" /> ECE
+          <input type="checkbox" /> Civil
+          <input type="checkbox" /> Mech
+        </td>
+      </tr>
+
+      <tr>
+        <td>Course :</td>
+        <td>
+          <select>
+            <option> ---------------------- Select Current Course's ------------------------ </option>
+            <option>Python</option>
+            <option>Node</option>
+            <option>Java</option>
+            <option>React</option>
+            <option>PHP</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Sahoo Family photo :</td>
+        <td><input type="file" /></td>
+      </tr>
+
+      <tr>
+        <td>City :</td>
+        <td><input type="text" size="50" /></td>
+      </tr>
+
+      <tr>
+        <td>Address :</td>
+        <td><textarea cols="48" rows="5"></textarea></td>
+      </tr>
+
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="Register" />
+        </td>
+      </tr>
+
+    </table>
+  </form>
 </body>
 </html>
