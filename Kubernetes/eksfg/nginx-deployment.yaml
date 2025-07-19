@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: <your ECR image URL>
+          image: 851725578224.dkr.ecr.us-west-2.amazonaws.com/prod/ecr0:latest
           ports:
             - containerPort: 80
 
