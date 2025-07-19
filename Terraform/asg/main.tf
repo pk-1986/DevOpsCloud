@@ -60,7 +60,7 @@ module "vpc" {
   cidr = "10.0.0.0/16"
 
   azs             = ["us-west-2a", "us-west-2b"]
-  public_subnets  = ["10.0.12.0/24", "10.0.22.0/24"]
+  public_subnets  = ["10.0.112.0/24", "10.0.122.0/24"]
   enable_nat_gateway = false
   single_nat_gateway = true
 
@@ -72,14 +72,14 @@ module "vpc" {
 
 resource "aws_subnet" "public_subnet1" {
   vpc_id                  = module.vpc.vpc_id
-  cidr_block              = "10.0.12.0/24"
+  cidr_block              = "10.0.112.0/24"
   availability_zone       = "us-west-2a"
   map_public_ip_on_launch = true
 }
 
 resource "aws_subnet" "public_subnet2" {
   vpc_id                  = module.vpc.vpc_id
-  cidr_block              = "10.0.22.0/24"
+  cidr_block              = "10.0.122.0/24"
   availability_zone       = "us-west-2b"
   map_public_ip_on_launch = true
 }
