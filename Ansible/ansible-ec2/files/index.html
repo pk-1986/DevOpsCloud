@@ -6,10 +6,10 @@
     const data = {
       "Runu Sahoo": { dob: "10-01-1978", age: 43, gender: "Male" },
       "Jhunu Sahoo": { dob: "10-01-1980", age: 41, gender: "Female" },
-	  "Mina Sahoo": { dob: "10-01-1982", age: 40, gender: "Female" },
-	  "Bulu Sahoo": { dob: "05-11-1986", age: 27, gender: "Male" },
-	  "Tulu Sahoo": { dob: "04-08-1988", age: 27, gender: "Male" },
-	  "Sinu Sahoo": { dob: "06-061992", age: 27, gender: "Female" },
+      "Mina Sahoo": { dob: "10-01-1982", age: 40, gender: "Female" },
+      "Bulu Sahoo": { dob: "05-11-1986", age: 27, gender: "Male" },
+      "Tulu Sahoo": { dob: "04-08-1988", age: 27, gender: "Male" },
+      "Sinu Sahoo": { dob: "06-06-1992", age: 27, gender: "Female" },
       "Lina Sahoo": { dob: "06-07-1994", age: 23, gender: "Female" }
     };
 
@@ -23,7 +23,6 @@
         document.getElementById("ageField").value = data[selectedName].age;
         document.getElementById("gender_" + data[selectedName].gender.toLowerCase()).checked = true;
 
-        // Also split name into first and last (optional enhancement)
         const nameParts = selectedName.split(" ");
         document.getElementById("fname").value = nameParts[0];
         document.getElementById("lname").value = nameParts.slice(1).join(" ");
@@ -46,9 +45,13 @@
         <td>
           <select id="nameDropdown" onchange="populateDetails()">
             <option value="">-- Select Name --</option>
-            <option value="Ram Kumar">Ram Kumar</option>
-            <option value="Sita Devi">Sita Devi</option>
-            <option value="Krishna Rao">Krishna Rao</option>
+            <option value="Runu Sahoo">Runu Sahoo</option>
+            <option value="Jhunu Sahoo">Jhunu Sahoo</option>
+            <option value="Mina Sahoo">Mina Sahoo</option>
+            <option value="Bulu Sahoo">Bulu Sahoo</option>
+            <option value="Tulu Sahoo">Tulu Sahoo</option>
+            <option value="Sinu Sahoo">Sinu Sahoo</option>
+            <option value="Lina Sahoo">Lina Sahoo</option>
           </select>
         </td>
       </tr>
@@ -61,9 +64,9 @@
       <tr>
         <td>Jay Mahakala name :</td>
         <td>
-          <input type="text" size="21" Placeholder="First Name" id="fname" />
+          <input type="text" size="21" placeholder="First Name" id="fname" />
           -
-          <input type="text" size="21" Placeholder="Last Name" id="lname" />
+          <input type="text" size="21" placeholder="Last Name" id="lname" />
         </td>
       </tr>
 
@@ -75,9 +78,9 @@
       <tr>
         <td>Date of birth :</td>
         <td>
-          <input type="text" size="3" Placeholder="Day" id="dob_day" /> -
-          <input type="text" size="3" Placeholder="Month" id="dob_month" /> -
-          <input type="text" size="8" Placeholder="Year" id="dob_year" />
+          <input type="text" size="3" placeholder="Day" id="dob_day" /> -
+          <input type="text" size="3" placeholder="Month" id="dob_month" /> -
+          <input type="text" size="8" placeholder="Year" id="dob_year" />
           <i>(DD-MM-YYYY)</i>
         </td>
       </tr>
