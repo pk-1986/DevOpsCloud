@@ -10,6 +10,9 @@ https://github.com/Tech-With-Helen/ingress-eks
 
 =====================================================####
 
+kubectl exec -it <pod-name> -n <namespace> -- /bin/bash
+
+
   2  sh https://github.com/pk-1986/DevOpsCloud/blob/main/devops-tool-setup.sh
     3  mkdir workspace
     4  cd workspace/
