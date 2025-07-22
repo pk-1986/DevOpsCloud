@@ -8,7 +8,7 @@ https://kubernetes.github.io/ingress-nginx/deploy/
 
 https://github.com/Tech-With-Helen/ingress-eks
 
-=====================================================
+=====================================================####
 
   2  sh https://github.com/pk-1986/DevOpsCloud/blob/main/devops-tool-setup.sh
     3  mkdir workspace
