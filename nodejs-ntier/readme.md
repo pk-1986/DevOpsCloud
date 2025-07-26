@@ -25,6 +25,17 @@ userpass
 
 kubectl exec -it mysql-7d55d98784-xrjcn -- /bin/bash
 
+===================================================================================
+USE appdb;
+
+INSERT INTO students (
+  roll_no, first_name, last_name, father_name, dob, age, mobile, email, password, gender, department, course
+) VALUES
+('R001', 'John', 'Doe', 'Michael Doe', '2000-01-15', 24, '9876543210', 'john.doe@example.com', 'pass123', 'Male', 'Computer Science', 'B.Tech'),
+('R002', 'Jane', 'Smith', 'Robert Smith', '1999-07-20', 25, '9123456780', 'jane.smith@example.com', 'pass456', 'Female', 'Electronics', 'B.E'),
+('R003', 'Amit', 'Kumar', 'Rajesh Kumar', '2001-03-05', 23, '9012345678', 'amit.k@example.com', 'pass789', 'Male', 'Mechanical', 'B.Tech');
+
+
 ===================================================================
 
 POST http://aa54f2049b69d4c739f03cb73b2446a2-1859996237.us-west-2.elb.amazonaws.com/submit
