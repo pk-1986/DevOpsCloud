@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Please update AWS configue ######################################"
 ecrUri="590183727102.dkr.ecr.us-west-2.amazonaws.com/prd/tom80"
+url= $(echo $ecrUri  | cut -d "/" -f1)
 # 1. Authenticate Docker to ECR
 aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 590183727102.dkr.ecr.us-west-2.amazonaws.com
 
