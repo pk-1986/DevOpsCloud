@@ -1,5 +1,5 @@
 name: CI/CD Pipeline
-runs-on: self-hosted
+
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted # or ubuntu-latest if you prefer GitHub-hosted
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -27,13 +27,16 @@ jobs:
         run: npm test
 
   deploy:
-    needs: build-and-test # This job depends on 'build-and-test'
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' # Only deploy on push to main
-    runs-on: ubuntu-latest
+    needs: build-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: self-hosted # keep consistent with build job
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Deploy to Production
-        run: echo "Deploying application..."
-        # Replace with your actual deployment commands (e.g., using a deployment action)
+        run: |
+          echo "Starting deployment..."
+          # Example: Deploy with SSH
+          # scp -r ./dist user@server:/var/www/html
+          # ssh user@server "pm2 restart app"
