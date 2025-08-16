@@ -46,7 +46,7 @@ pipeline {
             steps {
                 sh '''
                 IMAGE_TAG=${BUILD_NUMBER}
-                aws eks update-kubeconfig --region $AWS_REGION --name my-eks-cluster
+                aws eks update-kubeconfig --region $AWS_REGION --name prod-eks
 
                 kubectl set image deployment/$K8S_DEPLOYMENT \
                 myapp-container=$ECR_REPO:$IMAGE_TAG -n $K8S_NAMESPACE
