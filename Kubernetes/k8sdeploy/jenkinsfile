@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment {
-        AWS_REGION = "ap-south-1"
-        ECR_REPO = "123456789012.dkr.ecr.ap-south-1.amazonaws.com/myapp"
+        AWS_REGION = "us-west-2"
+        ECR_REPO = "533267415802.dkr.ecr.us-west-2.amazonaws.com/myapp"
         K8S_DEPLOYMENT = "myapp-deployment"
         K8S_NAMESPACE = "default"
     }
@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-org/your-repo.git'
+                git branch: 'main', url: 'https://github.com/pk-1986/DevOpsCloud.git'
             }
         }
 
