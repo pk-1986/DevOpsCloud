@@ -19,6 +19,7 @@ pipeline {
             steps {
                 withAWS(region: "${AWS_REGION}", credentials: 'awsid') {
                     sh '''
+                    cd $WORKSPACE/Kubernetes/k8sdeploy ; ls -ltr
                     aws ecr get-login-password --region $AWS_REGION | \
                     docker login --username AWS --password-stdin $ECR_REPO
                     '''
@@ -29,6 +30,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
+                cd $WORKSPACE/Kubernetes/k8sdeploy ; ls -ltr
                 IMAGE_TAG=${BUILD_NUMBER}
                 docker build -t $ECR_REPO:$IMAGE_TAG .
                 '''
@@ -39,6 +41,7 @@ pipeline {
             steps {
                 withAWS(region: "${AWS_REGION}", credentials: 'awsid') {
                     sh '''
+                    cd $WORKSPACE/Kubernetes/k8sdeploy ; ls -ltr
                     IMAGE_TAG=${BUILD_NUMBER}
                     docker push $ECR_REPO:$IMAGE_TAG
                     '''
@@ -50,6 +53,7 @@ pipeline {
             steps {
                 withAWS(region: "${AWS_REGION}", credentials: 'awsid') {
                     sh '''
+                    cd $WORKSPACE/Kubernetes/k8sdeploy ; ls -ltr
                     IMAGE_TAG=${BUILD_NUMBER}
                     aws eks update-kubeconfig --region $AWS_REGION --name prod-eks
 
