@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     dir('kubernetes') {
-                        sh "aws eks update-kubeconfig --name prodeks"
+                        sh "aws eks describe-cluster --name prodeks --region us-west-2"
                         sh "kubectl apply -f nginx-deployment.yaml"
                         sh "kubectl apply -f nginx-service.yaml"
                     }
