@@ -11,8 +11,8 @@ pipeline {
                 script {
                     dir('kubernetes') {
                         sh "aws eks describe-cluster --name prodeks --region us-west-2"
-                        sh "kubectl apply -f nginx-deployment.yaml"
-                        sh "kubectl apply -f nginx-service.yaml"
+                        sh "kubectl apply -f ${WORKSPACE}/Kubernetes/jenkins-deploy/nginx-deployment.yaml"
+                        sh "kubectl apply -f ${WORKSPACE}/Kubernetes/jenkins-deploy/nginx-service.yaml"
                     }
                 }
             }
