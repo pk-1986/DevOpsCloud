@@ -143,3 +143,10 @@ sudo gitlab-runner start
 
 echo #############################################################################################
 
+curl -Lo copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-$(uname -s)-$(uname -m)
+chmod +x copilot
+sudo mv copilot /usr/local/bin/copilot
+================================================================================================================
+
+
+
