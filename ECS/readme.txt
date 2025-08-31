@@ -1,12 +1,5 @@
 # Download latest Copilot
-curl -Lo copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-$(uname -s)-$(uname -m)
-
-# Make it executable
-chmod +x copilot
-
-# Move to PATH
-sudo mv copilot /usr/local/bin/copilot
-
+curl -Lo copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-linux && chmod +x copilot && sudo mv copilot /usr/local/bin/copilot && copilot --help
 
 ================================
 
