@@ -19,9 +19,7 @@ docker run -p 8080:8080 my-tomcat-app
 
 (as shown earlier)
 
-curl -Lo copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-$(uname -s)-$(uname -m)
-chmod +x copilot
-sudo mv copilot /usr/local/bin/copilot
+curl -Lo copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-linux && chmod +x copilot && sudo mv copilot /usr/local/bin/copilot && copilot --help
 
 🔹 Step 3: Initialize Copilot App
 copilot init
