@@ -34,6 +34,33 @@ sudo docker exec -it 1d54dc5861b4 bash
 
 sudo docker exec -it 1d54dc5861b4 bash
 
+=================================
+
+CREATE USER sales IDENTIFIED BY devops;
+GRANT CONNECT, RESOURCE TO sales;
+GRANT CREATE SESSION TO sales;
+GRANT UNLIMITED TABLESPACE TO sales; -- Optional, grants unlimited space
+
+-- Create order table
+CREATE TABLE order (
+    orderNO NUMBER(2,0) PRIMARY KEY,
+    DNAME VARCHAR2(14),
+    LOC VARCHAR2(13)
+);
+
+-- Create sales table
+CREATE TABLE sales (
+    salesNO NUMBER(4,0) PRIMARY KEY,
+    ENAME VARCHAR2(10),
+    JOB VARCHAR2(9),
+    MGR NUMBER(4,0),
+    HIREDATE DATE,
+    SAL NUMBER(7,2),
+    COMM NUMBER(7,2),
+    orderNO NUMBER(2,0),
+    CONSTRAINT FK_orderNO FOREIGN KEY (orderNO) REFERENCES order(orderNO)
+);
+
 
 
 
