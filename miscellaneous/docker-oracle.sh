@@ -26,4 +26,20 @@ Reset database SYS and SYSTEM passwords:
 
 docker exec <container name|id> resetPassword <your password>
 
+===================================================
+
+sudo docker ps
+
+sudo docker exec -it 1d54dc5861b4 bash
+
+sudo docker exec -it 1d54dc5861b4 bash
+
+
+
+
+
+
+
+
+
 
