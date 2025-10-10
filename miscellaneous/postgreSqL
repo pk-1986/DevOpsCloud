@@ -1,0 +1,6 @@
+sudo docker pull postgres
+sudo docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+sudo docker exec -it e6933d164aff bash
+
+
+
